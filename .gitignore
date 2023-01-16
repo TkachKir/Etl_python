@@ -135,3 +135,6 @@ dmypy.json
 .pyre/
 
 .editorconfig
+
+# Personal data
+database.ini
