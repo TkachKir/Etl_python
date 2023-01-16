@@ -137,4 +137,4 @@ dmypy.json
 .editorconfig
 
 # Personal data
-database.ini
+ConfigConn/database.ini
