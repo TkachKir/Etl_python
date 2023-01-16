@@ -2,6 +2,7 @@ psycopg2-binary
 faker
 mysql-connector-python
 pandas
+configparser
 
 
 
