@@ -114,7 +114,7 @@ venv/
 ENV/
 env.bak/
 venv.bak/
-DoneStorage/d1_packs/credentials
+
 
 # Spyder project settings
 .spyderproject
@@ -138,3 +138,4 @@ dmypy.json
 
 # Personal data
 ConfigConn/database.ini
+
