@@ -1,10 +1,43 @@
-
 sqlCheck = """SELECT VERSION()"""
 
-sqlCreated = ("""CREATE TABLE IF NOT EXISTS public.user(
-                name varchar(50),
-                sure_name varchar(50),
-                age int);""")
+sqlForFaker = """INSERT INTO public.people (first_name, last_name, email, zipcode, city, birthdate, flag)
+                    VALUES ('%s', '%s', '%s', '%s', '%s', '%s', '%s');"""
+
+sqlForFakerCreate = """CREATE TABLE IF NOT EXISTS public.people (
+                        pk serial4 NOT NULL,
+                        uniid uuid NOT NULL DEFAULT uuid_generate_v4(),
+                        first_name varchar(25) NOT NULL,
+                        last_name varchar(25) NOT NULL,
+                        email varchar(50) NOT NULL,
+                        zipcode int NOT NULL,
+                        city varchar(25) NOT NULL,
+                        birthdate date NULL,
+                        flag int NOT NULL,
+                        create_dat timestamp NOT NULL DEFAULT now(),
+                        activ bool NULL
+                        );"""
+
+sqlCreateMysqlTab = """CREATE TABLE IF NOT EXISTS fo_test.people (
+                        pk int NOT NULL,
+                        uniid char(255) NOT NULL,
+                        first_name varchar(25) NOT NULL,
+                        last_name varchar(25) NOT NULL,
+                        email varchar(50) NOT NULL,
+                        zipcode int NOT NULL,
+                        city varchar(25) NOT NULL,
+                        birthdate date NULL,
+                        flag int NOT NULL,
+                        create_dat timestamp NOT NULL DEFAULT now(),
+                        activ char(25) NULL);"""
+
+sqlInsertToMysql = """INSERT INTO fo_test.people (pk, uniid, first_name, last_name, email, zipcode, city, birthdate, flag, create_dat, activ)
+                    VALUES ('%s', '%s', '%s', '%s', '%s', '%s', '%s','%s','%s','%s','%s');"""
+
+sqlSelectFromPg = """SELECT pk, uniid, first_name, last_name, email, zipcode, city, birthdate, flag, create_dat, activ
+                       FROM public.people;"""
+
+sqlTruncMysql = """TRUNCATE table fo_test.people;"""
+
 
 # commands = (
 #         """

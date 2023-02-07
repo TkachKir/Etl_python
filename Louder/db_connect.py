@@ -1,6 +1,6 @@
 import psycopg2
 import mysql.connector
-from ConfigConn.config import configPg, configMysqp
+from Louder.config import configPg, configMysqp
 
 
 def get_conn_postgres():
@@ -12,6 +12,6 @@ def get_conn_postgres():
 
 def get_conn_mysql():
     params = configMysqp()
-    conn = mysql.connector.connect(params)
+    conn = mysql.connector.connect(**params)
     cur = conn.cursor()
     return cur, conn

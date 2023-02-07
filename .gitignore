@@ -137,5 +137,4 @@ dmypy.json
 .editorconfig
 
 # Personal data
-ConfigConn/
-.database.ini
+/Users/kirilltkacev/PycharmProjects/Etl_python/ConfigConn/database.ini
